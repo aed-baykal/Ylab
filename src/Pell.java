@@ -9,9 +9,9 @@ public class Pell {
                 if (n == 0) System.out.println("Число Пелля = 0");
                 else if (n == 1) System.out.println("Число Пелля = 1");
                 else {
-                    int pellNumberN = 1;
-                    int pellNumberNMinus1;
-                    int pellNumberNMinus2 = 0;
+                    long pellNumberN = 1;
+                    long pellNumberNMinus1;
+                    long pellNumberNMinus2 = 0;
                     for (int i = 1; i < n; i++) {
                         pellNumberNMinus1 = pellNumberN;
                         pellNumberN = 2 * pellNumberNMinus1 + pellNumberNMinus2;
