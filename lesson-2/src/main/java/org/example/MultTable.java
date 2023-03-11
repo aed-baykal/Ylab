@@ -1,3 +1,5 @@
+package org.example;
+
 public class MultTable {
     public static void main(String[] args) throws Exception {
         for (int multiplier1 = 1; multiplier1 <= 9; multiplier1++) {
