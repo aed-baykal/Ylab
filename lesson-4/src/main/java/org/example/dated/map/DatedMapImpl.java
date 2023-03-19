@@ -7,7 +7,7 @@ import java.util.Set;
 
 public class DatedMapImpl implements DatedMap {
 
-    private final Map<String, DatedMapElement> storedMap = new HashMap<>();
+    private Map<String, DatedMapElement> storedMap = new HashMap<>();
 
     @Override
     public void put(String key, String value) {
