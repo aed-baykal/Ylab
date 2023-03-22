@@ -14,13 +14,13 @@ public class PasswordValidator {
             Matcher matcherLog = pattern.matcher(login);
             if (!matcherLog.matches()) {
                 throw new WrongLoginException("Логин содержит недопустимые символы");
-            } else if (login.length() > 20) {
+            } else if (login.length() > 19) {
                 throw new WrongLoginException("Логин слишком длинный");
             }
             Matcher matcherPass = pattern.matcher(password);
             if (!matcherPass.matches()) {
                 throw new WrongPasswordException("Пароль содержит недопустимые символы");
-            } else if (password.length() > 20) {
+            } else if (password.length() > 19) {
                 throw new WrongPasswordException("Пароль слишком длинный");
             }
         } catch (RuntimeException e) {
