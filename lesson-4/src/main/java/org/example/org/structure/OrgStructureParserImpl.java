@@ -25,18 +25,14 @@ public class OrgStructureParserImpl implements OrgStructureParser {
         for (String fileLine : fileLines) {
             String[] splitedText = fileLine.split(";");
             Employee employee = new Employee();
-            try {
+            if (!splitedText[0].equals("id")) {
+                if (!splitedText[1].isEmpty()) {
+                    employee.setBossId(Long.parseLong(splitedText[1]));
+                }
                 employee.setId(Long.parseLong(splitedText[0]));
-                employee.setBossId(Long.parseLong(splitedText[1]));
                 employee.setName(splitedText[2]);
                 employee.setPosition(splitedText[3]);
                 initialEmployeeList.add(employee);
-            } catch (NumberFormatException e) {
-                if (!splitedText[0].isEmpty() && splitedText[1].isEmpty()) {
-                    employee.setName(splitedText[2]);
-                    employee.setPosition(splitedText[3]);
-                    initialEmployeeList.add(employee);
-                }
             }
         }
         return initialEmployeeList;
